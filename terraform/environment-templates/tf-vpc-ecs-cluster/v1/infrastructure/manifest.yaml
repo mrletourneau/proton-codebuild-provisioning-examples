@@ -41,6 +41,7 @@ infrastructure:
           - cat proton-inputs.json
           - export PROTON_ENV=$(cat proton-inputs.json | jq '.environment.name' -r)
           - echo "FAILING THIS ON PORPOISE 🐬" && exit 1
+          
 
           # build bucket name
           - export ACCOUNT=$(aws sts get-caller-identity --query "Account" --output text)
